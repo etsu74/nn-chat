@@ -3,10 +3,10 @@ const http = require('node:http');
 const auth = require('http-auth');
 const router = require('./lib/router');
 
-const basic = auth.basic({
-  realm: 'Enter username and password.',
-  file: './users.htpasswd' // .htpasswdファイルのパス
-});
+//const basic = auth.basic({
+//  realm: 'Enter username and password.',
+//  file: './users.htpasswd' // .htpasswdファイルのパス
+//});
 
 const server = http.createServer(basic.check((req, res) => {
   router.route(req, res);
