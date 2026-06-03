@@ -8,10 +8,10 @@ const router = require('./lib/router');
 //  file: './users.htpasswd' // .htpasswdファイルのパス
 //});
 
-const server = http.createServer(basic.check((req, res) => {
+const server = http.createServer((req, res) => {
   router.route(req, res);
 
-}))
+})
   .on('error', e => {
     console.error('Server Error:', e);
   })
